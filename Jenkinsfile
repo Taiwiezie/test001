@@ -10,6 +10,11 @@ pipeline {
    }
 
     stages {
+        stage('Checkout SCM') {
+            steps {
+                checkout poll: false, scm: scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-rsa', url: 'git@github.com:mamudue/test001.git']])
+            }
+        }
         stage('clean') {
             steps {
                 cleanWs cleanWhenFailure: false, disableDeferredWipeout: true, notFailBuild: true
