@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout SCM') {
             steps {
-                checkout poll: false, scm: scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-rsa', url: 'git@github.com:mamudue/test001.git']])
+                checkout poll: false, scm: scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-rsa', url: 'git@github.com:Taiwiezie/test001.git']])
             }
         }
         stage('clean') {
@@ -30,11 +30,6 @@ pipeline {
                 sh 'ansible --version'
                 sh 'ansible-playbook --version'
                 sh 'ansible-rulebook --version'
-            }
-        }
-        stage('Ping test') {
-            steps {
-                sh 'ansible dev -i /opt/Rules/inventory -l vm05 -m ping'
             }
         }
     }
