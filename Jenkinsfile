@@ -1,7 +1,7 @@
 pipeline {
     
    agent {
-   label 'aee-eda-inbound'
+   label 'AnsibleEDA'
    }
    
    options {
