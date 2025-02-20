@@ -20,7 +20,8 @@ pipeline {
         }
         stage('clean') {
             steps {
-                cleanWs cleanWhenFailure: false, disableDeferredWipeout: true, notFailBuild: true
+                // cleanWs cleanWhenFailure: false, disableDeferredWipeout: true, notFailBuild: true
+                cleanWs()
             }
         }
         stage('Hello') {
