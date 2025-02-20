@@ -12,7 +12,10 @@ pipeline {
     stages {
         stage('Checkout SCM') {
             steps {
-                checkout poll: false, scm: scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Jenkins-Github', url: 'git@github.com:Taiwiezie/test001.git']])
+                checkout poll: false, 
+                scm: scmGit(branches: [[name: 'main']], 
+                extensions: [], 
+                userRemoteConfigs: [[credentialsId: 'Jenkins-Github', url: 'git@github.com:Taiwiezie/test001.git']])
             }
         }
         stage('clean') {
