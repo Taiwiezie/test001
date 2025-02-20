@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout SCM') {
             steps {
                 checkout poll: false, 
-                scm: scmGit(branches: [[name: 'main']], 
+                scm: scmGit(branches: [[name: 'feature/testing001']], 
                 extensions: [], 
                 userRemoteConfigs: [[credentialsId: 'Jenkins-Github', url: 'git@github.com:Taiwiezie/test001.git']])
             }
